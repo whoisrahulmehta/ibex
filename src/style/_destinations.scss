@@ -1,0 +1,31 @@
+.Destinations{
+    width: 100%;
+    height: auto;
+    padding: 5% 1%;
+    background: $main;
+
+    .locationlist{
+        .card{
+            @include FC;
+            width: 100%;
+            align-items: center;
+            .tcard{
+                height: 20%;
+                @include FC;
+                width: 100%;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+                .about , .dsc{
+                    width: 100%;
+                    padding: 2%;
+                    font-size: 2rem;
+                }
+                .about{
+                    color: gold;
+                }
+            }
+        }
+    }
+}

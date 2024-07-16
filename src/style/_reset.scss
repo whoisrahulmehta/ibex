@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+$main:#254336 ;
+$baseBR: 10px;
+$hover-col: lighten(gold, 5%);
+$primary : #254336;
+$secondary: #6B8A7A;
+$tertiary : #B7B597;
+$color : #DAD3BE;
+
+* {
+  // border: 1px solid white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all ease 0.22s;
+  scrollbar-width: none;
+}
+img{
+max-width: 100%;
+height: auto;
+object-fit: contain;
+aspect-ratio: 3/2;
+}
+@mixin absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  trasnform: translateX(-50%) translateY(-50%);
+}
+@mixin FR {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin FC {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: space-evenly;
+}
+%box {
+  border: 1px solid tansparent;
+  border-radius: $baseBR;
+}
+@mixin MFD {
+  @extend %box;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+@mixin MFL {
+  @extend %box;
+  background: rgba(0, 0, 0, 1);
+  border-color: rgba(0, 0, 0, 0.2);
+  color: black;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  @include FR;
+  padding: 0 3%;
+  &:hover {
+    color: $hover-col;
+    cursor: pointer;
+  }
+}
+.active {
+  color: $hover-col;
+  border-bottom: 1px solid $hover-col;
+}
+.brand{
+  color: gold !important ;
+  font-style: italic;
+  z-index: 111;
+  text-transform: uppercase;
+}
+.btn-primary{
+  @include FR;
+  width: 10%;
+  margin: 0 auto;
+  background-color: $main;
+  height: 4%;
+  color: white;
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 1% 0;
+  transition: all ease-in-out 400ms;
+  &:hover{
+    color: $main;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid $main;
+  }
+}
+body {
+  background: $main;
+  color: white;
+  width: 100%;
+  height: fit-content;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  @include FC;
+  gap: 2px;
+  justify-content: space-between;
+  align-items: center;
+}
+.App, #root{
+  height: auto;
+  width: 100%;
+}
+header{
+  width: 100%;
+  // height: 5vh;
+}
+main{
+  // height: 30vh;
+  width: 100%;
+}
+.layout{
+  width: 100%;
+  // height: 100vh;
+  // padding-top: 4%;
+  @include FC;
+  justify-content: space-between;
+}
+// animations
+.slideintop {
+  animation: slideintop ease 1s forwards;
+  @keyframes slideintop {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0%);
+    }
+  }
+}
+.slideinleft {
+  animation: slideinleft ease-in 1s forwards;
+  @keyframes slideinleft {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+}
+.slideinright {
+  animation: slideinright ease-in 1s forwards;
+  @keyframes slideinright {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+}
+//end
+
+input,
+select {
+  background: transparent;
+  border: 0;
+  outline: 0;
+  color: white;
+  border-bottom: 1px solid white;
+  option {
+    background: black;
+  }
+  &:focus {
+    border: 0;
+    outline: 0;
+    transform: scale(1.142);
+    margin: 0 2%;
+    border-bottom: 1px solid white;
+  }
+}

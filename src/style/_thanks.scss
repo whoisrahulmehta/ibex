@@ -1,0 +1,13 @@
+.Thanks{
+    width: 100%;
+    height: 100vh;
+    padding: 2%;
+    @include FC;
+justify-content: center;
+align-items: center;
+gap: 10%;
+.emote{
+    font-size: 10rem;
+    color: gold;
+}
+}

@@ -1,0 +1,33 @@
+.Cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: 100vh;
+    width: 100%;
+    gap: 10px;
+    @include MFD;
+.rows{
+    height: 100%;
+    width: 100%;;
+    @include FR;
+    border-radius: 20px;
+    img{
+        background-position: center;
+        background-size: contain;
+    }
+    .dsc{
+        display: none;
+        width: 50%;
+        margin:0 auto ;
+
+    }
+    &:hover{
+        .name{
+            display: none;
+        }
+        .dsc{
+            display: block;
+        }
+    }
+}
+}

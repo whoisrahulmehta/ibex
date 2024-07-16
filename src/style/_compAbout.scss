@@ -1,0 +1,38 @@
+.blog {
+  order: -1;
+  width: 100%;
+  height: auto;
+  @include FC;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 5% 0%;
+  .images{
+    width: 100%;
+    height: 40vh;
+    padding: 0;
+   img{
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+   }
+  }
+  h1 {
+    width: 100%;
+
+    height: 20px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+  }
+  p {
+    padding: 2% 10%;
+    font-size: 0.7;
+    font-style: italic;
+    &:first-letter {
+      color: gold;
+      font-size: 0.9rem;
+    }
+  }
+}

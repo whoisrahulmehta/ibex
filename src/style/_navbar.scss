@@ -1,0 +1,57 @@
+.slideintop{
+  position: fixed;
+  z-index: 999;
+  top: 1%;
+}
+
+nav {
+  @include FR;
+  background: rgba($color: white, $alpha: 0.1);
+  backdrop-filter: blur(5px);
+  color: $color;
+  width: 100%;
+  height: 7vh;
+  padding: 0 3%;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+  font-size: 1.2rem;
+  .navmenu {
+    @include FR;
+    width: 40%;
+    height: 100%;
+    justify-content: space-evenly;
+    gap: 0px;
+  }
+  .brand {
+    @include FR;
+    color: black !important;
+    font-size: 1.6rem;
+    padding-right: 2%;
+    width: 12%;
+    height: 100%;
+    span{
+      color: gold !important;
+      padding: 2% 0;
+    }
+    img{
+      width: 100%;
+      height:100%;
+    }
+    span {
+      font-size: 1.8rem;
+      color: $tertiary;
+    }
+    p {
+      &:hover {
+        color: gold;
+        text-decoration: none;
+      }
+    }
+  }
+  p {
+    &:hover {
+      color: $primary;
+      text-decoration: underline $primary;
+    }
+  }
+}

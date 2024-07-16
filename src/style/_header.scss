@@ -1,0 +1,60 @@
+.header {
+  height: 100vh;
+  width: 100%;
+  @include FC;
+background-image: url("src/assets/hp10.jpg");
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+margin:  1%  0;
+.imageInspan{
+  // background-color: $main;
+  width: 0;
+  img{
+    width: 0;
+  }
+
+
+}
+  .middle {
+    position: relative;
+    height: clamp(20%, auto, 60%);
+    width: 100%;
+    @include FC;
+    align-items: end;
+  }
+  .box {
+    @include FC;
+    font-size: 12px;
+    justify-content: start;
+    align-items: start;
+    background: red;
+    color: white;
+    width: 20px;
+    height: 40%;
+    position: absolute;
+    top: 1%;
+  }
+  .quote {
+    padding-right: 2%;
+    text-align: right;
+    font-size: min(8vw, 14vh);
+    white-space: nowrap;
+    line-height: normal;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+  .slideIn {
+    animation: slidein ease-in 1.5s forwards;
+  }
+  @keyframes slidein {
+    from {
+      transform: translateY(20%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
+}

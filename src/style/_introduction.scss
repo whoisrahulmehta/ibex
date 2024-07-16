@@ -1,0 +1,31 @@
+.introduction {
+  height: 80vh;
+  width: 100%;
+  // margin: 5% 0;
+  // @include MFD;
+  @include FR;
+  border-bottom: 1px solid $secondary;
+  background-image: url("/src/assets/IMG_20200925_122114.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  // background-attachment: fixed;
+  
+  .image {
+    // width: 14vmin;
+    height: 14vmin;
+    @include MFD;
+    backdrop-filter: blur(20px);
+    @include FR;
+    border-radius: 50%;
+  }
+  .q {
+    width: 80%;
+    // height: 90%;
+    @include FC;
+    padding: 1% 4%;
+    font-size: 1.1rem;
+    font-style: italic;
+    backdrop-filter: blur(1.9px);
+  }
+}

@@ -1,0 +1,13 @@
+.Gallery{
+    width: 100%;
+    height: auto;
+    padding: 5% 2%;
+    @include FC;
+    justify-content: center;
+    gap: 5vh;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+
+}
