@@ -5,7 +5,8 @@ function Introduction() {
   return (
     <motion.div className="introduction" initial={{opacity: 0 , rotateX:"360deg"} }  whileInView={{opacity:1 , rotateX:"0deg"} } transition ={{duration:2}}>
       <motion.div className="image slideinleft" initial={{width:0, opacity:0}} whileInView={{width :"14vmin", opacity:1} }  transition={{delay:2, duration: 1}}>
-<img src="/src/assets/favicon.png" alt="img" />
+<img src="/favicon.png " alt="img" />
+
       </motion.div>
       <motion.div className="q " initial={{x:-200}} whileInView={{ x:0}} transition={{delay:"0.5", ease:"linear" , duration:1 }}>
         <p>

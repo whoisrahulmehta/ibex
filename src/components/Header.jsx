@@ -9,7 +9,7 @@ function Header() {
       <div className="middle slideIn">
         {[
           { name: "Travel", ani: "slideinright" },
-          { name: "Far Enough", ani: "slideinleft" , img:"src/assets/favicon.png"},
+          { name: "Far Enough", ani: "slideinleft" , img:"/favicon.png"},
           { name: "To Find Yourself", ani: "slideinleft" },
         ].map((a, i) => (
           <motion.p className={`quote ${a.ani}`} key={i}  initial={{opacity: 0,width:0} }  whileInView={{opacity:1, width:"100%"} } transition ={{duration:2}}>

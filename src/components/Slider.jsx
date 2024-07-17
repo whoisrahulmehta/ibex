@@ -17,7 +17,7 @@ navigate('/plan')
           <p>Manali </p> <p>Visit Manali Today</p>
         </div>
         <div className="image">
-          <img src="src/assets/manali.jpg" alt="image" />
+          <img src="/manali.jpg" alt="image" />
         </div>
       </div>
       <button className="btn-primary" onClick={handleClick}>See More </button>
