@@ -36,7 +36,7 @@ const intialscroll =useRef(window.screenY);
   return (
   <nav className={` ${add ? "slideintop " : " "}`}>
       <div className="brand">
-          <span><img src= "/favicon.png" alt="abc"/> </span><span>IBEX</span>
+          <span><img src= "https://github.com/whoisrahulmehta/assetsforwebsites/raw/ffafb122f09c33bf635959713e1d33c7af5d5744/ibex/favicon.png" alt="abc"/> </span><span>IBEX</span>
       </div>
       <motion.div className="navmenu" initial={{opacity:0}} animate={{opacity:1}} transition={{delay:2 } }>
         {[

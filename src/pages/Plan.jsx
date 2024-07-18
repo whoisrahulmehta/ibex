@@ -1,30 +1,63 @@
 import React, { useState } from "react";
 import Thankspage from "../components/Thankspage";
+import { useNavigate } from "react-router-dom";
 
 function Plan() {
   const [option, setOption] = useState("Native");
+  const navigate = useNavigate();
 
   const handleSelect = (e) => {
     const location = e.target.value;
     setOption(location);
     console.log(location);
   };
+
   const [submitted, setSubmitted] = useState(false);
+
+
+  const [result, setResult] = React.useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "e412f675-c579-4e4f-bfcf-b14799096740");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("FOrm Submitted");
+    console.log("Form Submitted");
     setSubmitted(true);
+    const timer = setTimeout(() => navigate("/"), 5000);
+    return () => clearTimeout(timer);
   };
+
   return (
     <>
       {submitted ? (
-        <Thankspage massage={"Your Form Has Been Submitted"} />
+        <Thankspage massage={"You will soon receive a response, Thnak you"} />
       ) : (
-        <div className="book">
+        <form className="book" onSubmit={onSubmit}>
           <h1>Let's Plan A Trip for You </h1>
           <p>
-            <label>
+            <label htmlFor="category">
               Domestic
               <input
                 type="radio"
@@ -34,7 +67,7 @@ function Plan() {
                 onClick={(e) => handleSelect(e)}
               />
             </label>
-            <label>
+            <label htmlFor="category">
               International
               <input
                 type="radio"
@@ -47,17 +80,24 @@ function Plan() {
           </p>
           <form onSubmit={handleSubmit}>
             <h1>Select from the following </h1>
-            <label>
+            <label htmlFor="name">
               <span>I am </span>
-              <input type="text" id="name" name="name" placeholder=""  autoComplete="true"/> .
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder=""
+                autoComplete="true"
+              />{" "}
+              .
             </label>
-            <label>
+            <label htmlFor="date">
               <span>From </span>
-              <input type="date" id="fromdate" name="fromdate" /> To{" "}
+              <input type="date" id="fromdate" name="fromdate" /> To
               <input type="date" id="todate" name="todate" />.
             </label>
 
-            <label>
+            <label htmlFor="travellers">
               <span>Number of Travellers</span>
               <select id="travellers" name="travellers">
                 <option value="">travellers</option>
@@ -72,7 +112,7 @@ function Plan() {
               </select>
             </label>
             {option === "International" ? (
-              <label>
+              <label htmlFor="iDestinations">
                 <span>International Destinations</span>
                 <select id="iDestinations" name="iDestinations">
                   <option value="">International Destinations</option>
@@ -288,7 +328,7 @@ function Plan() {
               ""
             )}
             {option === "Native" ? (
-              <label>
+              <label htmlFor="nDestinations">
                 <span>Native Destinations</span>
                 <select id="nDestinations" name="nDestinations">
                   <option value="">Native Destinations</option>
@@ -417,20 +457,20 @@ function Plan() {
             ) : (
               ""
             )}
-            <label>
+            <label htmlFor="phone">
               <span>You can contact me on</span>
               <input type="phone" id="phnumber" name="phnumber" />
             </label>
-            <label>
+            <label htmlFor="email">
               <span>Or email me at </span>
               <input type="email" id="email" name="email" />
             </label>
             <label>
               <span>Thank you </span>
             </label>
-            <button>Get a response on this booking</button>
+            <button type="submit">Get a response on this booking</button>
           </form>
-        </div>
+        </form>
       )}
     </>
   );

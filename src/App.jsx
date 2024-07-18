@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "./components/Layout";
 import { Route, HashRouter as Router, Routes } from "react-router-dom";
 import Home from "./pages/Home";
@@ -9,18 +9,26 @@ import Destinations from "./pages/Destinations";
 import Join from "./pages/Join";
 import Error from "./pages/Errorpage";
 import Gallery from "./pages/Gallery";
+import Loadingpage from "./components/Loadingpage";
 
 function App() {
-  
-  const locomotiveScroll = new LocomotiveScroll(
-    {
-      el : document.querySelector('[data-scroll-container]'),
-      smooth: true,
-    }
-  );
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const locomotiveScroll = new LocomotiveScroll({
+    el: document.querySelector("[data-scroll-container]"),
+    smooth: true,
+  });
 
   return (
-    <div className="App" data-scroll-container  >
+  <>
+  {
+    loading ? <Loadingpage /> : (
+      <div className="App" data-scroll-container>
       <Router>
         <Layout>
           <Routes>
@@ -35,6 +43,9 @@ function App() {
         </Layout>
       </Router>
     </div>
+    )
+  }
+  </>
   );
 }
 

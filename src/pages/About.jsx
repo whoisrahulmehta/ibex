@@ -4,9 +4,13 @@ import Subscribe from "../components/Subscribe";
 import { motion } from "framer-motion";
 
 function About() {
-  
   return (
-    <motion.section class="blog" initial={{opacity:0, y:-2000}} whileInView={{opacity:1, y:0}} transition={{duration:1}}> 
+    <motion.section
+      class="blog"
+      initial={{ opacity: 0, y: -2000 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+    >
       <h1>
         Discovering <span className="brand">IBEX</span>: Unveiling the Majesty
         of <span className="brand">the Himalayas</span>
@@ -33,7 +37,10 @@ function About() {
         to stark deserts, providing a canvas for every traveler's dream.
       </p>
       <p className="images">
-        <img src="/src/assets/dharamshala.jpg" alt="image" />
+        <img
+          src="https://github.com/whoisrahulmehta/assetsforwebsites/raw/ffafb122f09c33bf635959713e1d33c7af5d5744/ibex/dharamshala.jpg"
+          alt="image"
+        />
       </p>
       <p>
         Chapter 2: Adventure Beckons: Thrill Seekers' Haven For adrenaline
